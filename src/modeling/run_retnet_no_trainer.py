@@ -429,6 +429,7 @@ def main():
             "You can do it from another script, save it, and load it from here, using --tokenizer_name."
         )
 
+    config.vocab_size = tokenizer.vocab_size
     model = RetNetForCausalLM(config)
 
     # if args.model_name_or_path:
