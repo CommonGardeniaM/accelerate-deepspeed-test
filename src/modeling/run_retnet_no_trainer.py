@@ -55,7 +55,14 @@ from transformers import (
 )
 from transformers.utils import get_full_repo_name
 from transformers.utils.versions import require_version
-from retnet.configuration import load_config_from_json
+
+import sys
+
+if not "RetNet" in sys.path:
+    sys.path.append("/content/RetNet")
+    sys.path.append("/kaggle/working/RetNet")
+
+from retnet.configuration_retnet import load_config_from_json
 from retnet.modeling_retnet import RetNetForCausalLM
 
 logger = get_logger(__name__)
